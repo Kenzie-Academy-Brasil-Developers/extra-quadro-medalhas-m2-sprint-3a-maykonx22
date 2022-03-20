@@ -2,6 +2,10 @@ import { Api } from "../model/Api.js";
 
 Api.requisicao();
 
+const ouro = document.querySelector("#ouro button");
+const prata = document.querySelector("#prata button");
+const bronze = document.querySelector("#bronze button");
+
 const data = await Api.requisicao();
 
 function constructApi() {
@@ -36,6 +40,10 @@ function constructApi() {
   }
 
   template(array);
+
+  ouro.value = 1;
+  prata.value = 1;
+  bronze.value = 1;
 
   return array;
 }
@@ -152,7 +160,6 @@ const posicao = document.querySelector("#posicao button");
 posicao.addEventListener("click", (event) => {
   let evento = event.target;
 
-  console.log(dataT);
   if (Number(posicao.value) == 0) {
     let newArrayR = [];
 
@@ -178,9 +185,11 @@ posicao.addEventListener("click", (event) => {
 
     posicao.innerHTML = `Posição <span>&#709</span>`;
   }
-});
 
-const ouro = document.querySelector("#ouro button");
+  ouro.value = 1;
+  prata.value = 1;
+  bronze.value = 1;
+});
 
 ouro.addEventListener("click", (event) => {
   const dataArray = [];
@@ -238,9 +247,8 @@ ouro.addEventListener("click", (event) => {
 
     ouro.innerHTML = `Ouro <span>&#709</span>`;
   }
+  posicao.value = 1;
 });
-
-const prata = document.querySelector("#prata button");
 
 prata.addEventListener("click", (event) => {
   const dataArray = [];
@@ -298,9 +306,8 @@ prata.addEventListener("click", (event) => {
 
     prata.innerHTML = `Prata <span>&#709</span>`;
   }
+  posicao.value = 1;
 });
-
-const bronze = document.querySelector("#bronze button");
 
 bronze.addEventListener("click", (event) => {
   const dataArray = [];
@@ -358,6 +365,7 @@ bronze.addEventListener("click", (event) => {
 
     bronze.innerHTML = `Bronze <span>&#709</span>`;
   }
+  posicao.value = 1;
 });
 
 const pesquisa = document.querySelector("#pesquisas div button");
@@ -379,6 +387,7 @@ pesquisa.addEventListener("click", (event) => {
   }
 
   input.value = "";
+  posicao.value = 1;
 });
 
 function filtro(dataV) {
