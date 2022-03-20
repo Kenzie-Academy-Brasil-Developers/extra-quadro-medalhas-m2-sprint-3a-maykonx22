@@ -152,6 +152,7 @@ const posicao = document.querySelector("#posicao button");
 posicao.addEventListener("click", (event) => {
   let evento = event.target;
 
+  console.log(dataT);
   if (Number(posicao.value) == 0) {
     let newArrayR = [];
 
@@ -182,7 +183,13 @@ posicao.addEventListener("click", (event) => {
 const ouro = document.querySelector("#ouro button");
 
 ouro.addEventListener("click", (event) => {
-  dataT.sort((a, b) => {
+  const dataArray = [];
+
+  dataT.forEach((element) => {
+    dataArray.push(element);
+  });
+
+  dataArray.sort((a, b) => {
     if (a.medal_gold > b.medal_gold) {
       return -1;
     } else {
@@ -209,8 +216,8 @@ ouro.addEventListener("click", (event) => {
   if (Number(ouro.value) == 0) {
     let newArrayR = [];
 
-    for (let i = dataT.length - 1; i >= 0; i--) {
-      newArrayR.push(dataT[i]);
+    for (let i = dataArray.length - 1; i >= 0; i--) {
+      newArrayR.push(dataArray[i]);
     }
 
     template(newArrayR);
@@ -221,8 +228,8 @@ ouro.addEventListener("click", (event) => {
   } else {
     let newArray = [];
 
-    for (let i = 0; i < dataT.length; i++) {
-      newArray.push(dataT[i]);
+    for (let i = 0; i < dataArray.length; i++) {
+      newArray.push(dataArray[i]);
     }
 
     template(newArray);
@@ -236,7 +243,13 @@ ouro.addEventListener("click", (event) => {
 const prata = document.querySelector("#prata button");
 
 prata.addEventListener("click", (event) => {
-  dataT.sort((a, b) => {
+  const dataArray = [];
+
+  dataT.forEach((element) => {
+    dataArray.push(element);
+  });
+
+  dataArray.sort((a, b) => {
     if (a.medal_silver > b.medal_silver) {
       return -1;
     } else {
@@ -263,8 +276,8 @@ prata.addEventListener("click", (event) => {
   if (Number(prata.value) == 0) {
     let newArrayR = [];
 
-    for (let i = dataT.length - 1; i >= 0; i--) {
-      newArrayR.push(dataT[i]);
+    for (let i = dataArray.length - 1; i >= 0; i--) {
+      newArrayR.push(dataArray[i]);
     }
 
     template(newArrayR);
@@ -275,8 +288,8 @@ prata.addEventListener("click", (event) => {
   } else {
     let newArray = [];
 
-    for (let i = 0; i < dataT.length; i++) {
-      newArray.push(dataT[i]);
+    for (let i = 0; i < dataArray.length; i++) {
+      newArray.push(dataArray[i]);
     }
 
     template(newArray);
@@ -290,7 +303,13 @@ prata.addEventListener("click", (event) => {
 const bronze = document.querySelector("#bronze button");
 
 bronze.addEventListener("click", (event) => {
-  dataT.sort((a, b) => {
+  const dataArray = [];
+
+  dataT.forEach((element) => {
+    dataArray.push(element);
+  });
+
+  dataArray.sort((a, b) => {
     if (a.medal_bronze > b.medal_bronze) {
       return -1;
     } else {
@@ -317,8 +336,8 @@ bronze.addEventListener("click", (event) => {
   if (Number(bronze.value) == 0) {
     let newArrayR = [];
 
-    for (let i = dataT.length - 1; i >= 0; i--) {
-      newArrayR.push(dataT[i]);
+    for (let i = dataArray.length - 1; i >= 0; i--) {
+      newArrayR.push(dataArray[i]);
     }
 
     template(newArrayR);
@@ -329,8 +348,8 @@ bronze.addEventListener("click", (event) => {
   } else {
     let newArray = [];
 
-    for (let i = 0; i < dataT.length; i++) {
-      newArray.push(dataT[i]);
+    for (let i = 0; i < dataArray.length; i++) {
+      newArray.push(dataArray[i]);
     }
 
     template(newArray);
